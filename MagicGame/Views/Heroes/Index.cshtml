@@ -1,0 +1,85 @@
+﻿@model PaginatedList<MagicGame.Models.Hero>
+
+@{
+    ViewData["Title"] = "Heroes";
+}
+
+<h1 align="center">Heroes</h1>
+
+<p align="center">
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Race)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Health)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Kda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().GamesCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Player)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Race)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Health)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GamesCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Player.Id)
+                </td>
+
+
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex - 1)"
+       class="btn btn-default @prevDisabled">
+        Previous
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex + 1)"
+       class="btn btn-default @nextDisabled">
+        Next
+</a>

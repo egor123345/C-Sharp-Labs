@@ -1,0 +1,64 @@
+﻿@model MagicGame.Models.Hero
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Hero</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Race)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Health)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Health)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kda)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kda)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamesCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamesCount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Id)
+        </dd>
+    </dl>
+
+    <h4>Items</h4>
+
+    <ul>
+        @foreach (Item i in Model.Items)
+
+        {
+            <li>@i.Name</li>
+        }
+    </ul>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

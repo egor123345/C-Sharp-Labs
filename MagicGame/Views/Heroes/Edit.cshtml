@@ -1,0 +1,75 @@
+﻿@model MagicGame.Models.Hero
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Hero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Race" class="control-label"></label>
+                <input asp-for="Race" class="form-control" />
+                <span asp-validation-for="Race" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Level" class="control-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Health" class="control-label"></label>
+                <input asp-for="Health" class="form-control" />
+                <span asp-validation-for="Health" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kda" class="control-label"></label>
+                <input asp-for="Kda" class="form-control" />
+                <span asp-validation-for="Kda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GamesCount" class="control-label"></label>
+                <input asp-for="GamesCount" class="form-control" />
+                <span asp-validation-for="GamesCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerId" class="control-label"></label>
+                <select asp-for="PlayerId" class="form-control" asp-items="ViewBag.PlayerId"></select>
+                <span asp-validation-for="PlayerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label> Hero Items (Choose to delete)</label>
+                <select asp-for="Items" class="form-control" asp-items="ViewBag.HeroItems"></select>
+
+               <span asp-validation-for="Items" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label> Available Items (Choose to add)</label>
+                <select asp-for="Items" class="form-control" asp-items="ViewBag.AvailableItems"></select>
+                <span asp-validation-for="Items" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

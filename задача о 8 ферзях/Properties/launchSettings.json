@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "задача о 8 ферзях": {
+      "commandName": "Project",
+      "commandLineArgs": "арг1 арг2"
+    }
+  }
+}
