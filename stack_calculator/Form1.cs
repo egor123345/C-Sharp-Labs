@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lab1
+namespace stack_calculator
 {
     public partial class Form1 : Form
     {

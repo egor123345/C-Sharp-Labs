@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace задача_о_8_ферзях
+namespace Problem_of_8_queens_8_knights
 {
     internal class ChessBoard
     {

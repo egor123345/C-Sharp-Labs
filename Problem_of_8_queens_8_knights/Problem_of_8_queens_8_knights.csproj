@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>задача_о_8_ферзях</RootNamespace>
+    <RootNamespace>Problem_of_8_queens_8_knights</RootNamespace>
   </PropertyGroup>
 
 </Project>

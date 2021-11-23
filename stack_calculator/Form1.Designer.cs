@@ -1,4 +1,4 @@
-﻿namespace lab1
+﻿namespace stack_calculator
 {
     partial class Form1
     {

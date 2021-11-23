@@ -2,7 +2,7 @@
 /// <summary>
 /// Решить задачу 8 коней
 /// </summary>
-namespace задача_о_8_ферзях
+namespace Problem_of_8_queens_8_knights
 {
     class Program
     {
