@@ -14,6 +14,9 @@
 *.userprefs
 
 MagicGame/appsettings.json
+MagicGame/wwwroot/lib
+*.sln
+cs_projects.sln
 
 # Mono auto generated files
 mono_crash.*
